@@ -206,9 +206,7 @@ void ReymentaRuttEtraApp::update()
 void ReymentaRuttEtraApp::draw()
 {
     gl::clear( Color( 0.39f, 0.025f, 0.0f ) ); // red/brown to be different
-    
-	gl::clear(Color::gray(0.5));
-
+ 
 	gl::color(Color::white());
 	gl::disableDepthRead();
 	if (enableWebcamPreview) gl::draw(webcam, webcam.getBounds(), getWindowBounds());
