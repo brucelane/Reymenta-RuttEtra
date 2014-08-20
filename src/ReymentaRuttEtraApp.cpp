@@ -93,7 +93,7 @@ private:
 void ReymentaRuttEtraApp::prepareSettings(Settings *settings)
 {
         g_Width  = 640;
-        g_Height = 512;
+        g_Height = 480;
         settings->setWindowSize( g_Width, g_Height );
         settings->setFullScreen( false );
         settings->setResizable( false ); // keep the screen size constant for a sender
@@ -123,8 +123,10 @@ void ReymentaRuttEtraApp::setup()
 	enableGrayScale = true;
 
 	mCam.setPerspective(45.0, getWindowAspectRatio(), 0.1f, 10000.0f);
-	mCam.lookAt(Vec3f(0.0, 0.0, 500.0), Vec3f::zero(), Vec3f::yAxis());
-	mCam.setCenterOfInterestPoint(Vec3f::zero());
+	//mCam.lookAt(Vec3f(0.0, 0.0, 500.0), Vec3f::zero(), Vec3f::yAxis());
+	mCam.lookAt(Vec3f(320.0, 240.0, 500.0), Vec3f(320.0, 240.0, 0.0), Vec3f::yAxis());
+	//mCam.setCenterOfInterestPoint(Vec3f::zero());
+	mCam.setCenterOfInterestPoint(Vec3f(320.0, 240.0, 0.0));
 
 	maya.setCurrentCam(mCam);
 	try {
