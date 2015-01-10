@@ -115,7 +115,9 @@ void ReymentaRuttEtraApp::setup()
     // Optionally test for texture share compatibility
     // bMemoryMode informs us whether Spout initialized for texture share or memory share
     bMemoryMode = spoutsender.GetMemoryShareMode();
-    // Initialize a sender
+	//fix 
+	spoutsender.SetDX9(true);
+	// Initialize a sender
     bInitialized = spoutsender.CreateSender(SenderName, g_Width, g_Height);
     // RuttEtra
 	elevation = 10;
@@ -203,6 +205,8 @@ void ReymentaRuttEtraApp::update()
 
 		lineBreak = p;
 	}
+	getWindow()->setTitle("(" + toString(floor(getAverageFps())) + " fps) RuttEtra");
+
 }
 
 void ReymentaRuttEtraApp::draw()
